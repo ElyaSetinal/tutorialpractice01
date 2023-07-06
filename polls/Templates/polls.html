@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>poll : {{ pollsname }}</title>
+</head>
+<body>
+    <form action="{{ ids }}/result" method="post">
+        {% csrf_token %}
+        {% for object in argument_list.all %}
+            <input type="radio" name="text" value="{{object.id}}">{{object.question_text}}<br> 
+        {% endfor %}
+        <input type="submit" value="Vote">
+    </form>
+
+    <a href="{% url 'Main_page' %}">돌아가기</a>
+
+</body>
+</html>

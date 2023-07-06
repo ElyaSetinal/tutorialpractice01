@@ -1,0 +1,9 @@
+### File name ###
+db.sqlite3
+
+### Extension ###
+*.origin
+
+### Directory ###
+__pycache__
+.vscode

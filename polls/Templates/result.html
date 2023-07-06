@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ pollsname }}'s Result</title>
+</head>
+<body>
+    {% for object in parameter_list.all %}
+        {{object.question_text}} - {{object.votes}} Votes!<br> 
+    {% endfor %}
+
+    <a href="{% url 'poll_page' cur_cate %}">돌아가기</a><br>
+    <a href="{% url 'Main_page' %}">처음으로 돌아가기</a>
+
+</body>
+</html>
